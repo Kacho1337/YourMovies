@@ -1,0 +1,86 @@
+{%  extends 'base.html' %}
+ {% block title %} Home page {%  endblock %}
+
+{% block content %}
+{{ super() }}
+    <style>
+      #lost
+  {
+      text-decoration: underline #e6f060;
+      text-decoration-style: unset;
+      
+  }
+  .divi{
+      margin-top:10%;
+      margin-left:10%;
+  }
+  h1{
+      font-size:3.8rem;
+  }
+  p{
+      font-size:1.5rem;
+      font-weight: 300;
+  }
+  .swori{
+      display:inline-block;
+      font-weight: bold;
+      margin-top: 33px;
+      margin-bottom: 33px;
+  }
+  .pi{
+      margin-top:45px;
+      
+  }
+  .btn{
+      font-size:1.1rem;
+      padding-left:20px;
+      padding-right: 20px;
+      padding-top:10px;
+      padding-bottom:10px;
+      margin-top:15px;
+      background-color:#e6f060;
+      border-style: none;
+      color:black;
+      transition:ease 0.3s;
+  }
+  .btn:hover{
+    font-size:1.2rem;
+    background-color:#aab14a;
+    color:black;
+  }
+  .btn:focus {
+    font-size:1.2rem;
+    background-color:#aab14a;
+    color:black;
+  }
+  .flash{
+    color:rgb(34, 184, 34);
+    display:inline-block;
+    width:600px;
+    font-size:1.3rem;
+    font-weight: bold;;
+  }
+  
+      </style>
+      <section>
+      <div class="divi">
+          <h1><span id="lost">შეიყვანეთ</span><span> სერიალი ან ფილმი</span></h1>
+          <div class="pi">
+              <p>მიუთითეთ ფილმის ან სერიალის სახელი, გამოშვების წელი<br> და თქვენებური რეიტინგი ანუ როგორ შეაფასებდით მას<br>10 ბალიანი სისტემით</p>
+          </div>
+          <form method="post" style="width:20%; margin-top: 30px">
+            <div class="form-group">
+              <input type="text" name="Movie" class="form-control" placeholder="სერიალის/ფილმის სახელი"><br>
+              <input type="text" name="Year" class="form-control" placeholder="გამოშვების წელი"><br>
+              <input type="text" name="Rating" class="form-control"  placeholder="თქვენი შეფასება"><br>
+            </div>
+            {% with messages=get_flashed_messages()%}
+              {%for msg in messages%}
+                <p class="flash">{{msg}}</p>
+                {%endfor%}
+              {%endwith%}
+            <button type="submit" class="btn btn-primary">დამატება</button></form>
+      </div>
+
+  </section>
+{% endblock %}

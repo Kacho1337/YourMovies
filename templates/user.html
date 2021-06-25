@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<style>
+    .row{
+        width:90%;
+        margin-left:20px;
+        margin-bottom: 20px;
+    }
+    #lost
+  {
+      text-decoration: underline #e6f060;
+      text-decoration-style: unset;
+      
+  }
+  .divi{
+      margin-top:40px;
+      margin-bottom: 50px;;
+  }
+  .card-body{
+      display:flex;
+  }
+  .card-text{
+      margin-left:150px;
+  }
+  .carda{
+      font-size:1.4rem;
+      color:rgb(165, 165, 52);
+      font-weight:bold;
+      margin-right: 20px;
+  }
+  h5{
+      display:block;
+      margin-left:40px;
+      width: 40%;
+      line-height: 2.7rem;
+      
+  }
+  p{
+    display:block;
+    text-align: center;
+    line-height: 2.7rem;
+  }
+  .year{
+    font-size:1.4rem;
+    
+      font-weight:bold;
+  }
+  .card-title{
+      font-size:1.4rem;
+  }
+  .sd{
+    text-decoration:none;
+  }
+</style>
+{{super()}}
+<div class="divi">
+<center><h1><span id="lost">{{session['username']}}ს</span><span class="sd"> ფილმები და სერიალები</span></h1></center>
+ </div>
+   {{super()}}
+   
+    {%for each in all_movies%}
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"> {{each.Movie}}</h5>
+              <p class="card-text year">{{each.Year}}</p>
+              <p class="card-text carda">{{each.Rating}}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+
+
+
+
+{% endblock %}
+
+
+
+

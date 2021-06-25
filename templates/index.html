@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+{{ super() }}
+<html>
+    <head>
+        <title>error 404</title>
+    </head>
+    <style>
+    #lost
+{
+    text-decoration: underline #5491da;
+    text-decoration-style: unset;
+    
+}
+.divi{
+    margin-top:10%;
+    margin-left:10%;
+}
+h1{
+    font-size:3.8rem;
+}
+p{
+    font-size:1.5rem;
+    font-weight: 300;
+}
+.swori{
+    display:inline-block;
+    font-weight: bold;
+    margin-top: 33px;
+    margin-bottom: 33px;
+}
+.pi{
+    margin-top:45px;
+    
+}
+.btn{
+    font-size:1.25rem;
+    margin-right:20px;
+    padding:10px 15px;
+}
+    </style>
+    <section>
+    <div class="divi">
+        <h1><span id="lost">შეაფასეთ ნანახი</span><span> სერიალები და ფილმები</span></h1>
+        <div class="pi">
+            <p>ხშირად გავიწყდებათ ნანახი სერიალები და ფილმები, ან უბრალოდ გინდათ შექმნათ <br> ფაილი სადაც შეიყვანთ ნანახ ფილმებსა და სერიალებს და <br>თან მიუთითებთ თქვენებურ რეიტინგს?<br><span class="swori"> მაშინ სწორ ადგილას მოხვდით</span></p>
+        </div>
+        <div class="btns">
+            <a href="/login"><button type="button" class="btn btn-primary">ლოგინი</button></a>
+            <a href="/movies"><button type="button" class="btn btn-secondary">ფილმები</button></a>
+        </div>
+    </div>
+    
+</section>
+    </body>
+</html>
+{% endblock %}
